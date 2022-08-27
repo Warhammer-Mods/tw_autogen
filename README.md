@@ -31,14 +31,11 @@ Your directory should end up looking like this.
 ## Using Files
 Within Visual Studio Code, when you're working on a mod, you should either use File -> Open Folder, or File -> New Workspace. If you don't know what a Workspace is, I don't care to teach you, but you'll know what I mean if you do.
 
-Within your opened folder, either create or open up the .vscode/ folder, and either create or open up settings.json. To enable debugging, paste in the following:
+Within your opened folder, either create or open up the .vscode/ folder, and either create or open up settings.json. To enable debugging for wh3, paste in the following:
 ```
 {
     "Lua.workspace.library": [
-        "S:/modding/tw_autogen/output/wh3/global/",
-        "S:/modding/tw_autogen/output/wh3/campaign/",
-        "S:/modding/tw_autogen/output/wh3/frontend/",
-        "S:/modding/tw_autogen/output/wh3/battle/"
+        "S:/modding/tw_autogen/output/wh3/"
     ]
 }
 ```
