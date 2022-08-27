@@ -18,6 +18,7 @@ env:
   GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
   GIT_COMMITTER_NAME: github-actions[bot]
   GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+  DEBUG_ENABLED: ${{ secrets.ACTIONS_STEP_DEBUG }}
 
 jobs:
   build:
@@ -54,6 +55,8 @@ jobs:
 
       - name: Install
         run: |
+          [ "${DEBUG_ENABLED}" = 'true' ] && set -x
+
           if [ "${{ steps.rockspec.outputs.is_present }}" == "true" ]; then
             luarocks install --tree ${{ env.vendor_path }} --only-deps ${{ steps.rockspec.outputs.file_path }}
           fi
@@ -77,6 +80,8 @@ jobs:
         shell: bash
         id: git
         run: |
+          [ "${DEBUG_ENABLED}" = 'true' ] && set -x
+
           changes=$(git ls-files \
             --modified \
             --others \
