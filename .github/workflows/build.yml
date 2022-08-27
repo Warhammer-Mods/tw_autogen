@@ -70,7 +70,7 @@ jobs:
           lr_bin=$(luarocks path --tree ${{ env.vendor_path }} --lr-bin)
           echo "${lr_bin/;/:}" >> $GITHUB_PATH
 
-      - name: Generate Lua definitions
+      - name: Regenerate Lua definitions
         shell: bash
         run: |
           rm -rf ${{ env.output_dir }}
