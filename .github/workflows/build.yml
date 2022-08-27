@@ -70,7 +70,7 @@ jobs:
           lr_bin=$(luarocks path --tree ${{ env.vendor_path }} --lr-bin)
           echo "${lr_bin/;/:}" >> $GITHUB_PATH
 
-      - name: Regenerate Lua definitions
+      - name: Regenerate EmmyLua definitions
         shell: bash
         run: |
           rm -rf ${{ env.output_dir }}
@@ -135,7 +135,7 @@ jobs:
         id: commit
         run: |
           git add -A ${{ env.output_dir }}
-          git commit -m "tw_autogen: Update Lua definitions"
+          git commit -m "[tw_autogen] Update EmmyLua definitions"
       - name: Create a PR
         id: pr
         uses: peter-evans/create-pull-request@v4
@@ -152,11 +152,11 @@ jobs:
           branch: bot/tw_autogen
           delete-branch: true
           signoff: false
-          title: "[tw_autogen] Update Lua definitions"
+          title: "[tw_autogen] Update EmmyLua definitions"
           body: |
             # tw_autogen
 
-            Update Lua definitions.
+            Update EmmyLua definitions.
           labels: |
             automation
             lua
