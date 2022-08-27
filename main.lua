@@ -1,11 +1,15 @@
 --- TODO if there's two params with the same name (because CA docs don't provide param names), name them _1 _2 etc.
 
 --- TODO change the overrides folder structure so it has /wh3/ etc. folders within
---- TODO smartly create a single file called "all.lua" or "setup.lua" or something that basiucally defines all the relevant global variables and assigns them to the types
+--- TODO smartly create a single file called "all.lua" or "setup.lua" or something that basically defines all the relevant global variables and assigns them to the types
+
+if  _VERSION ~= "Lua 5.1" then
+    print("Lua 5.1 required but " .. _VERSION .. " detected, exiting…")
+    os.exit(1)
+end
 
 --- TODO emmylua-ify LFS
-package.cpath = package.cpath .. ";includes/?.dll"
-require "lfs"
+local lfs = require "lfs"
 
 local override_method_path = "override_methods"
 local override_type_path = "override_types"

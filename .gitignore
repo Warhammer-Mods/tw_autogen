@@ -1,2 +1,5 @@
-
+/.luarocks
+/lua
+/lua_modules
+/luarocks
 out.txt
