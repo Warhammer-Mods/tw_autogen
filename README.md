@@ -25,7 +25,8 @@ If you haven't already, using RPFM, set up your "MyMod" folder. Set it wherever 
 ## Downloading Files
 Within this repository, navigate to output -> your game. If you're modding Warhammer 3, go to output/wh3. You can use the [github directory downloader](https://download-directory.github.io/) to download just that folder, or clone the entire repository to your PC somewhere and utilize that directory later. Navigate to your MyMod folder, create a new folder (I call my tw_autogen), and paste the contents of the .zip file from the directory downloader into there.
 
-[!Your directory should look something like this!](/assets/doc-01.png)
+![Your directory should look something like this](/assets/doc-01.png)
+
 Your directory should end up looking like this.
 
 ## Using Files
