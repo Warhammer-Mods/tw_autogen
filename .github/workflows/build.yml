@@ -32,7 +32,7 @@ jobs:
       rockspec_is_changed: ${{ steps.changed_files_rockspec.outputs.any_changed }}
     steps:
       - uses: actions/checkout@v3
-      - uses: leafo/gh-actions-lua@v9.1.0
+      - uses: leafo/gh-actions-lua@v10.0.0
         with:
           luaVersion: ${{ env.lua_version }}
       - uses: leafo/gh-actions-luarocks@v4.3.0
