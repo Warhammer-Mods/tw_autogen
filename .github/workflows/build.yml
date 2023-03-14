@@ -146,7 +146,7 @@ jobs:
       - name: Get changed files
         id: changed_files_output
         if: steps.git.outputs.clean == 'false'
-        uses: tj-actions/changed-files@v35.6.4
+        uses: tj-actions/changed-files@v35.7.0
         with:
           files: |
             ${{ env.output_dir }}
@@ -155,7 +155,7 @@ jobs:
       - name: Get changed files
         id: changed_files_rockspec
         if: steps.git.outputs.clean == 'false'
-        uses: tj-actions/changed-files@v35.6.4
+        uses: tj-actions/changed-files@v35.7.0
         with:
           files: |
             ${{ steps.rockspec-new.outputs.file_path }}
