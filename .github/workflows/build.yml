@@ -273,7 +273,7 @@ jobs:
             luarocks
       - name: Enable Pull Request Automerge (${{ env.output_dir }})
         if: steps.pr-output.outputs.pull-request-operation == 'created'
-        uses: peter-evans/enable-pull-request-automerge@v2
+        uses: peter-evans/enable-pull-request-automerge@v3
         with:
           token: ${{ env.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.pr-output.outputs.pull-request-number }}
@@ -286,7 +286,7 @@ jobs:
           number: ${{ steps.pr-output.outputs.pull-request-number }}
       - name: Enable Pull Request Automerge (rockspec)
         if: steps.pr-rockspec.outputs.pull-request-operation == 'created'
-        uses: peter-evans/enable-pull-request-automerge@v2
+        uses: peter-evans/enable-pull-request-automerge@v3
         with:
           token: ${{ env.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.pr-rockspec.outputs.pull-request-number }}
