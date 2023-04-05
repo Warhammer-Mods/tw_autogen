@@ -217,7 +217,7 @@ jobs:
       - name: Create a PR (${{ env.output_dir }})
         if: needs.build.outputs.output_any_modified == 'true'
         id: pr-output
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ env.GITHUB_TOKEN }}
           committer: "${{ format(
@@ -248,7 +248,7 @@ jobs:
       - name: Create a PR (rockspec)
         if: needs.build.outputs.rockspec_is_changed == 'true'
         id: pr-rockspec
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ env.GITHUB_TOKEN }}
           committer: "${{ format(
